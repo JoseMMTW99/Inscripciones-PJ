@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
     return (
-        <div className="container">
+        <div className="container pb-5">
             <div className="animate__animated animate__backInDown">
                 <h1 className="pt-5 pb-5 d-flex align-items-center justify-content-center animate__animated animate__bounce animate__delay-15s">Pascua Joven Tucumán</h1>
             </div>

@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -37,6 +44,15 @@
   }
 }
 
+/* Delay Animación Footer */
 .animate__delay-15s{
   animation-delay: 15s;
+}
+
+body{
+  color: white;
+  background-image: url(../public/images/fondos/fondo-cruz-2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
