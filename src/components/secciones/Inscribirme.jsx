@@ -339,7 +339,7 @@ const Inscribirme = () => {
                 <div className="container">
                     {orderId ?"" : 
                         <div className="pt-5 d-grid justify-content-center">
-                            <button className="btn btn-light" type="submit" onClick={validarInputs2}>Enviar</button>
+                            <button className="btn btn-light" type="submit" onClick={enviarDatos}>Enviar</button>
                         </div>}
                 </div>
             </form >
