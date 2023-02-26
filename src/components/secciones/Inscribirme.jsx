@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const Inscribirme = () => {
@@ -37,11 +37,30 @@ const Inscribirme = () => {
 
     const [orderId, setOrderId] = useState("");
 
+    const validarInputs = () =>{
+        if (nombre_pasc !== "" && apellido_pasc !== "" && documento_pasc !== "" && nac_pasc !== "" && obrasocial_pasc !== "" && afiliado_pasc !== "" && email_pasc !== "" && sexo_pasc !== "" && colegio_pasc !== "" && colegio_otro_pasc !== "" && parrmov_pasc !== "" && parrmov_otro_pasc !== "" && enfermedad_pasc !== "" && medicamentos_pasc !== "" && alimentos_pasc !== "" && sangre_pasc !== "" && tel_pasc !== "" && pj_pasc !== "" && nombre_tutor1 !== "" && apellido_tutor1 !== "" && email_tutor1 !== "" && tel_tutor1 !== "" && nombre_tutor2 !== "" && apellido_tutor2 !== "" && email_tutor2 !== "" && tel_tutor2 !== "") {
+            enviarDatos;
+        }
+        else {
+            console.log("Inputs Incompletos");
+        }
+    }
+
+    const validarInputs2 = () =>{
+        {(nombre_pasc !== "" && apellido_pasc !== "" && documento_pasc !== "" && nac_pasc !== "" && obrasocial_pasc !== "" && afiliado_pasc !== "" && email_pasc !== "" && sexo_pasc !== "" && colegio_pasc !== "" && colegio_otro_pasc !== "" && parrmov_pasc !== "" && parrmov_otro_pasc !== "" && enfermedad_pasc !== "" && medicamentos_pasc !== "" && alimentos_pasc !== "" && sangre_pasc !== "" && tel_pasc !== "" && pj_pasc !== "" && nombre_tutor1 !== "" && apellido_tutor1 !== "" && email_tutor1 !== "" && tel_tutor1 !== "" && nombre_tutor2 !== "" && apellido_tutor2 !== "" && email_tutor2 !== "" && tel_tutor2 !== "") ? new Promise(()=>{setTimeout(()=>{enviarDatos},2000)})   : console.log("Inputs Incompletos")}
+    }
+    
     // Enviar Datos
     const enviarDatos = () => {
-        const pascuantes = {
+        const pascuantes =  {
+
+            //Filtro para Firebase
+            filtrar: {
+                nom: nombre_pasc,
+                ap: apellido_pasc
+            },
             // Datos Pascuante
-            pascuante: {
+            datos_pascuante: {
                 nombre_pasc: nombre_pasc,
                 apellido_pasc: apellido_pasc,
                 documento_pasc: documento_pasc,
@@ -61,12 +80,14 @@ const Inscribirme = () => {
                 tel_pasc: tel_pasc,
                 pj_pasc: pj_pasc,
             },
+            // Datos Tutor 1
             tutor1: {
                 nombre_tutor1: nombre_tutor1,
                 apellido_tutor1: apellido_tutor1,
                 email_tutor1: email_tutor1,
                 tel_tutor1: tel_tutor1,
             },
+            // Datos Tutor 2
             tutor2: {
                 nombre_tutor2: nombre_tutor2,
                 apellido_tutor2: apellido_tutor2,
@@ -81,47 +102,48 @@ const Inscribirme = () => {
             setOrderId(snapShot.id);
         })
     }
+    
 
     return (
-        <div className="pb-5 animate__animated animate__zoomIn animate__delay-1s">
+        <div className="animate__animated animate__zoomIn animate__delay-1s">
             <h1 className="container pt-5 d-flex align-items-center justify-content-center">Datos Personales</h1>
-            <div className="container pt-2">
-                <div className="row pt-3">
-                    <div className="col">
+            <form className="container pt-2">
+                <div className="row">
+                    <div className="col md-6 pt-3">
                         <label htmlFor="inputState">Nombre</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Apellido</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_pasc(e.target.value) }} required />
                     </div>
                 </div>
-                <div className="row pt-3">
-                    <div className="col">
+                <div className="row">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Documento</label>
-                        <input type="number" className="form-control" placeholder="Ingrese su Documento" aria-label="Documento" onInput={(e) => { setDocumento_pasc(e.target.value) }} />
+                        <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Documento" aria-label="Documento" onInput={(e) => { setDocumento_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Fecha de Nacimiento</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Fecha de Nacimiento" aria-label="Fecha de Nacimiento" onInput={(e) => { setNac_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese su Fecha de Nacimiento" aria-label="Fecha de Nacimiento" onInput={(e) => { setNac_pasc(e.target.value) }} required />
                     </div>
                 </div>
-                <div className="row pt-3">
-                    <div className="col">
+                <div className="row">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Obra Social</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Obra Social" aria-label="Obra Social" onInput={(e) => { setObrasocial_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese su Obra Social" aria-label="Obra Social" onInput={(e) => { setObrasocial_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Número de Afiliado</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Número de Afiliado" aria-label="Número de Afiliado" onInput={(e) => { setAfiliado_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese su Número de Afiliado" aria-label="Número de Afiliado" onInput={(e) => { setAfiliado_pasc(e.target.value) }} required />
                     </div>
                 </div>
-                <div className="row pt-3">
-                    <div className="col">
+                <div className="row">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Email</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Sexo</label>
                         <select id="inputState" className="form-select" onInput={(e) => { setSexo_pasc(e.target.value) }}>
                             <option defaultValue>Ingrese su Sexo</option>
@@ -130,8 +152,8 @@ const Inscribirme = () => {
                         </select>
                     </div>
                 </div>
-                <div className="row pt-3">
-                    <div className="col">
+                <div className="row">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Colegio</label>
                         <select id="inputState" className="form-select" onInput={(e) => { setColegio_pasc(e.target.value) }}>
                             <option defaultValue>Ingrese su Colegio</option>
@@ -142,6 +164,7 @@ const Inscribirme = () => {
                             <option>Colegio Salesiano General Belgrano</option>
                             <option>Comercio Nro 1</option>
                             <option>El mirador</option>
+                            <option>El Salvador</option>
                             <option>Escuela Normal Lenguas Vivas Juan Bautista Alberdi</option>
                             <option>Fasta Boisdron</option>
                             <option>Fasta Reina de la Paz</option>
@@ -165,12 +188,16 @@ const Inscribirme = () => {
                             <option>Pucara</option>
                             <option>Sagrado Corazón</option>
                             <option>San Carlos Borromeo</option>
+                            <option>San Fernando</option>
                             <option>San Francisco</option>
+                            <option>San Javier</option>
                             <option>San Joaquín</option>
                             <option>San José</option>
+                            <option>San Matías</option>
                             <option>San Pablo Apóstol</option>
                             <option>San Patricio</option>
                             <option>San Vicente de Paul</option>
+                            <option>Salesiano General Belgrano</option>
                             <option>Santa Catalina</option>
                             <option>Santa Cecilia</option>
                             <option>Santa Rita</option>
@@ -181,10 +208,10 @@ const Inscribirme = () => {
                             <option>Tulio García Fernández</option>
                             <option>Otro</option>
                         </select>
-                        <label className="pt-2" htmlFor="inputState">Si no aparece tu Colegio/Escuela en el campo anterior escribí acá su nombre. Si ya lo pusiste en el campo anterior pone "Listo"</label>
-                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Colegio" onInput={(e) => { setColegio_otro_pasc(e.target.value) }} />
+                        <label className="pt-2" htmlFor="inputState">Si no aparece tu Colegio/Escuela en el campo anterior selecciona "Otro" y escribí acá su nombre. Si ya lo pusiste en el campo anterior pone "Listo"</label>
+                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Colegio" onInput={(e) => { setColegio_otro_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Parroquia/Movimiento</label>
                         <select id="inputState" className="form-select" onInput={(e) => { setParroqmov_pasc(e.target.value) }}>
                             <option defaultValue>Ingrese su Parroquia/Movimiento</option>
@@ -212,14 +239,14 @@ const Inscribirme = () => {
                             <option>Decanato 5</option>
                             <option>Otro</option>
                         </select>
-                        <label className="pt-2" htmlFor="inputState">Si no aparece tu Parroquia/Movimiento en el campo anterior escribí acá su nombre. Si ya lo pusiste en el campo anterior pone "Listo"</label>
-                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Parroquia/Movimiento" onInput={(e) => { setParroqmov_otro_pasc(e.target.value) }} />
+                        <label className="pt-2" htmlFor="inputState">Si no aparece tu Parroquia/Movimiento en el campo anterior selecciona "Otro" y escribí acá su nombre. Si ya lo pusiste en el campo anterior pone "Listo"</label>
+                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Parroquia/Movimiento" onInput={(e) => { setParroqmov_otro_pasc(e.target.value) }} required />
                     </div>
                 </div>
-                <div className="row pt-3">
-                    <div className="col">
+                <div className="row">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Padeces alguna Enfermedad</label>
-                        <select id="inputState" className="form-select" onInput={(e) => { setEnfermedad_pasc(e.target.value) }}>
+                        <select id="inputState" className="form-select" onInput={(e) => { setEnfermedad_pasc(e.target.value) }} >
                             <option defaultValue>Ingrese su Enfermedad</option>
                             <option>Ninguna</option>
                             <option>Problemas respiratorios</option>
@@ -230,13 +257,13 @@ const Inscribirme = () => {
                             <option>Otro</option>
                         </select>
                         <label className="pt-2" htmlFor="inputState">Especificar Medicamentos</label>
-                        <input type="text" className="form-control" placeholder="(Especificar otra enfermedad) Especificar Medicamentos/No" aria-label="Especificar Medicamentos" onInput={(e) => { setMedicamentos_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="(Especificar otra enfermedad) Especificar Medicamentos/No" aria-label="Especificar Medicamentos" onInput={(e) => { setMedicamentos_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Especificaciones Alimentarias</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Alergias, Intolerancias, etc" aria-label="Especificaciones Alimentarias" onInput={(e) => { setAlimentos_pasc(e.target.value) }} />
+                        <input type="text" className="form-control" placeholder="Ingrese sus Alergias, Intolerancias, etc" aria-label="Especificaciones Alimentarias" onInput={(e) => { setAlimentos_pasc(e.target.value) }} required />
                         <label className="pt-2" htmlFor="inputState">Grupo sanguíneo y factor RH</label>
-                        <select id="inputState" className="form-select" onInput={(e) => { setSangre_pasc(e.target.value) }}>
+                        <select id="inputState" className="form-select" onInput={(e) => { setSangre_pasc(e.target.value) }} >
                             <option defaultValue>Ingrese su Grupo Sanguineo y factor RH</option>
                             <option>A+</option>
                             <option>A-</option>
@@ -248,14 +275,13 @@ const Inscribirme = () => {
                             <option>AB-</option>
                         </select>
                     </div>
-
                 </div>
-                <div className="row pt-3">
-                    <div className="col">
+                <div className="row">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Número de teléfono (Completo) 54381*******</label>
-                        <input type="number" className="form-control" placeholder="Ingrese su Número de teléfono" aria-label="Documento" onInput={(e) => { setTel_pasc(e.target.value) }} />
+                        <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de teléfono" aria-label="Documento" onInput={(e) => { setTel_pasc(e.target.value) }} required />
                     </div>
-                    <div className="col">
+                    <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">¿Habías participado antes Pascua joven?</label>
                         <select id="inputState" className="form-select" onInput={(e) => { setPj_pasc(e.target.value) }}>
                             <option defaultValue>Seleccionar</option>
@@ -264,58 +290,61 @@ const Inscribirme = () => {
                         </select>
                     </div>
                 </div>
-            </div >
-            <h2 className="container pt-4 d-flex align-items-center justify-content-center">Datos Tutor 1</h2>
+                <h2 className="container pt-5 d-flex align-items-center justify-content-center">Datos Tutor 1</h2>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Nombres</label>
+                            <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_tutor1(e.target.value) }} required />
+                        </div>
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Apellido</label>
+                            <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_tutor1(e.target.value) }} required />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Número de teléfono (Completo) 54381*******</label>
+                            <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de Teléfono" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor1(e.target.value) }} required />
+                        </div>
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Email</label>
+                            <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor1(e.target.value) }} required />
+                        </div>
+                    </div>
+                </div >
+                <h2 className="container pt-5 d-flex align-items-center justify-content-center">Datos Tutor 2</h2>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Nombre</label>
+                            <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_tutor2(e.target.value) }} required />
+                        </div>
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Apellido</label>
+                            <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_tutor2(e.target.value) }} required />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Número de teléfono (Completo) 54381*******</label>
+                            <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de Teléfono" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor2(e.target.value) }} required />
+                        </div>
+                        <div className="col-md-6 pt-3">
+                            <label htmlFor="inputState">Email</label>
+                            <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor2(e.target.value) }} required />
+                        </div>
+                    </div>
+                </div >
+                <div className="container">
+                    {orderId ?"" : 
+                        <div className="pt-5 d-grid justify-content-center">
+                            <button className="btn btn-light" type="submit" onClick={validarInputs2}>Enviar</button>
+                        </div>}
+                </div>
+            </form >
             <div className="container">
-                <div className="row pt-3">
-                    <div className="col">
-                        <label htmlFor="inputState">Nombres</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_tutor1(e.target.value) }} />
-                    </div>
-                    <div className="col">
-                        <label htmlFor="inputState">Apellido</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_tutor1(e.target.value) }} />
-                    </div>
-                </div>
-                <div className="row pt-3">
-                    <div className="col">
-                        <label htmlFor="inputState">Número de Teléfono</label>
-                        <input type="number" className="form-control" placeholder="Ingrese su Número de Teléfono" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor1(e.target.value) }} />
-                    </div>
-                    <div className="col">
-                        <label htmlFor="inputState">Email</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor1(e.target.value) }} />
-                    </div>
-                </div>
-            </div >
-            <h2 className="container pt-4 d-flex align-items-center justify-content-center">Datos Tutor 2</h2>
-            <div className="container">
-                <div className="row pt-3">
-                    <div className="col">
-                        <label htmlFor="inputState">Nombre</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_tutor2(e.target.value) }} />
-                    </div>
-                    <div className="col">
-                        <label htmlFor="inputState">Apellido</label>
-                        <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_tutor2(e.target.value) }} />
-                    </div>
-                </div>
-                <div className="row pt-3">
-                    <div className="col">
-                        <label htmlFor="inputState">Número de Teléfono</label>
-                        <input type="number" className="form-control" placeholder="Ingrese su Número de Teléfono" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor2(e.target.value) }} />
-                    </div>
-                    <div className="col">
-                        <label htmlFor="inputState">Email</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor2(e.target.value) }} />
-                    </div>
-                </div>
-            </div >
-            <div className="container p-1">
-                {orderId ? "" : <input className="btn btn-light mt-4 d-grid mx-auto border" type="submit" value="Enviar" onClick={enviarDatos}></input>}
-            </div>
-            <div className="container pt-5">
-                {orderId ? <div><h2>Felicidades {nombre_pasc} tus datos fueron enviados! Gracias por pre-inscribirte a Pascua Joven!</h2><p>Recuerda presentar los datos solicitados especificados de los Requisitos de Inscripción en la sección principal. En nuestras redes sociales vamos a estar manteniendote al día con el retiro. En la sección "Preguntas Frecuentes" podrás encontrar como contactarnos si tenes algún inconveniente</p></div> : ""}
+                {orderId ? <div><h2 className="pt-5 text-center">Felicidades {nombre_pasc} tus datos fueron enviados! Gracias por pre-inscribirte a Pascua Joven!</h2><p className="text-center">Recuerda presentar los datos solicitados especificados de los Requisitos de Inscripción en la sección principal. En nuestras redes sociales vamos a estar manteniendote al día con el retiro. La preinscripción no asegura tu lugar en el retiro, solo lo reserva.</p></div> : ""}
             </div>
         </div>
     )
