@@ -22,10 +22,10 @@ const PreguntasFrecuentes = () => {
                     </div>
                     <div className="col-md-5 col-lg-7 align-self-start">
                         <div className="m-3">
-                            <h4 className="text-end">Que necesito llevar</h4>
+                            <h4 className="text-end">¿Que necesito llevar?</h4>
                             <ul>
                                 <li>Mudas de ropa cómoda.</li>
-                                <li>Bolsa de dormir y/o colchón Inflable.</li>
+                                <li>Bolsa de dormir y/o colchón inflable.</li>
                                 <li>Elementos de Higiene Personal.</li>
                                 <li>Mochila o bolso de mano.</li>
                                 <li>Cuaderno y cartuchera.</li>
@@ -54,11 +54,7 @@ const PreguntasFrecuentes = () => {
                     <div className="col-md-5 col-lg-7 align-self-start">
                         <div className="m-3">
                             <h4 className="text-end">Aclaración</h4>
-                            <p>En casos de extrema necesidad, la recepción de objetos, medicamentos, etc será en la puerta
-                                del Campus Santa Rosa a partir de las 18 hs hasta las 21 hs, sin excepción. Dichos objetos
-                                deberán tener una etiqueta con apellido, nombre y DNI de la persona a la cual va dirigido, de lo
-                                contrario no será recibido. La entrega se realizará a media noche cuando finalicen las actividades
-                                programadas.</p>
+                            <p>En casos de extrema necesidad, la recepción de objetos, medicamentos, etc. será en la puerta del Campus Santa Rosa a partir de las 18 hs hasta las 21 hs, sin excepción. Dichos objetos deberán tener una etiqueta con apellido, nombre y DNI de la persona a la cual va dirigido, de lo contrario no será recibido. La entrega se realizará a media noche cuando finalicen las actividades programadas.</p>
                         </div>
                     </div>
                 </section>
@@ -87,8 +83,8 @@ const PreguntasFrecuentes = () => {
                 <section className="row col-xl-6 gx-0 align-items-center border p-2 animate__animated animate__fadeInLeft">
                     <div className="col-md-5 col-lg-7 align-self-start">
                         <div className="m-3">
-                            <h4 className="text-start">Ficha Medica y Dieta</h4>
-                            <p>Recuerden llenar todos los campos con información verídica. Se trata de <b>SU SALUD</b>. Aquellos que tengan una dieta en especial, no olviden especificar adecuadamente cuál es. Aquellas personas que tengan una dieta en especial la tendremos contemplada en el presupuesto del retiro (es decir, siempre y cuando en la <b>PRE-INSCRIPCIÓN</b> hayan detallado que son diabéticos, celíacos, veganos, vegetarianos, etc. tendrán su menú aparte).</p>
+                            <h4 className="text-start">Ficha Médica y Dieta</h4>
+                            <p>Recuerden llenar todos los campos con información verídica. Se trata de <b>SU SALUD</b>. Aquellos que tengan una dieta en especial, no olviden especificar adecuadamente cuál es, la tendremos contemplada en el presupuesto del retiro (es decir, siempre y cuando en la <b>PRE-INSCRIPCIÓN</b> hayan detallado que son diabéticos, celíacos, veganos, vegetarianos, etc. tendrán su menú aparte).</p>
                         </div>
                     </div>
                     <div className="col-md-7 col-lg-5">
@@ -102,9 +98,9 @@ const PreguntasFrecuentes = () => {
                     <div className="col-md-5 col-lg-7 align-self-start">
                         <div className="m-3">
                             <h4 className="text-end">Si estan fuera de la ciudad podrán ir en otra fecha</h4>
-                            <p>Pero por favor, estas aclaraciones son para quienes no puedan ir realmente. No queremos ser cansadores con la insistencia pero si no se inscriben ahora:</p>
+                            <p>Pero por favor, estas aclaraciones son para quienes no puedan ir realmente. No queremos ser insistentes pero si no se inscriben ahora:</p>
                             <ul>
-                                    <li>No aseguran el lugar.</li>
+                                    <li>No se aseguran el lugar.</li>
                                     <li>Las colas de inscripción al final serán larguísimas.</li>
                                 </ul>
                         </div>

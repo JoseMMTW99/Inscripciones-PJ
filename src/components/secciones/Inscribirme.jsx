@@ -44,7 +44,9 @@ const Inscribirme = () => {
 
     const validarInputs = () => {
         if (nombre_pasc !== "" && apellido_pasc !== "" && documento_pasc !== "" && nac_pasc !== "" && obrasocial_pasc !== "" && afiliado_pasc !== "" && email_pasc !== "" && sexo_pasc !== "" && colegio_pasc !== "" && colegio_otro_pasc !== "" && parrmov_pasc !== "" && parrmov_otro_pasc !== "" && enfermedad_pasc !== "" && medicamentos_pasc !== "" && alimentos_pasc !== "" && sangre_pasc !== "" && tel_pasc !== "" && pj_pasc !== "" && nombre_tutor1 !== "" && apellido_tutor1 !== "" && email_tutor1 !== "" && tel_tutor1 !== "" && nombre_tutor2 !== "" && apellido_tutor2 !== "" && email_tutor2 !== "" && tel_tutor2 !== "") {
+
             console.log("Completo");
+            //DATOS QUE SE CARGAN
             const pascuante = {
 
                 //Filtro para Firebase
@@ -100,60 +102,6 @@ const Inscribirme = () => {
             console.log("Inputs Incompletos");
         }
     }
-
-    // Enviar Datos
-    const enviarDatos = () => {
-        const pascuante = {
-
-            //Filtro para Firebase
-            filtrar: {
-                nom: nombre_pasc,
-                ap: apellido_pasc
-            },
-            // Datos Pascuante
-            datos_pascuante: {
-                nombre_pasc: nombre_pasc,
-                apellido_pasc: apellido_pasc,
-                documento_pasc: documento_pasc,
-                nac_pasc: nac_pasc,
-                obrasocial_pasc: obrasocial_pasc,
-                afiliado_pasc: afiliado_pasc,
-                email_pasc: email_pasc,
-                sexo_pasc: sexo_pasc,
-                colegio_pasc: colegio_pasc,
-                colegio_otro_pasc: colegio_otro_pasc,
-                parrmov_pasc: parrmov_pasc,
-                parrmov_otro_pasc: parrmov_otro_pasc,
-                enfermedad_pasc: enfermedad_pasc,
-                medicamentos_pasc: medicamentos_pasc,
-                alimentos_pasc: alimentos_pasc,
-                sangre_pasc: sangre_pasc,
-                tel_pasc: tel_pasc,
-                pj_pasc: pj_pasc,
-            },
-            // Datos Tutor 1
-            tutor1: {
-                nombre_tutor1: nombre_tutor1,
-                apellido_tutor1: apellido_tutor1,
-                email_tutor1: email_tutor1,
-                tel_tutor1: tel_tutor1,
-            },
-            // Datos Tutor 2
-            tutor2: {
-                nombre_tutor2: nombre_tutor2,
-                apellido_tutor2: apellido_tutor2,
-                email_tutor2: email_tutor2,
-                tel_tutor2: tel_tutor2
-            }
-        };
-
-        const db = getFirestore();
-        const pascuanteCollection = collection(db, "pascuante");
-        addDoc(pascuanteCollection, pascuante).then((snapShot) => {
-            setOrderId(snapShot.id);
-        })
-    }
-
 
     return (
         <div className="animate__animated animate__zoomIn animate__delay-1s">

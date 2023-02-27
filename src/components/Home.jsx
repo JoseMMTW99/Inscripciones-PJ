@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="col-md-7 col-lg-10 align-self-start">
                     <div className="m-3">
                         <h4 className="text-start">¿Qué es Pascua Joven?</h4>
-                        <p className="text-start">Pascua Joven es un <b>RETIRO</b> de <b>ALTO IMPACTO</b> organizado por la pastoral de la juventud, dirigido a los jovenes adolescentes. Se realiza de miércoles santo y a domingo de pascua de manera presencial.</p>
+                        <p className="text-start">Pascua Joven es un <b>RETIRO</b> de <b>ALTO IMPACTO</b> organizado por la pastoral de la juventud, dirigido a los jovenes adolescentes. Se realiza de miércoles santo a domingo de pascua de manera presencial.</p>
                         <p className="text-start"></p>
                         <ul>
                             <li>Ubicación: <a className="text-light" target={"_blank"} href="https://www.google.com/maps/dir//campus+santa+rosa/@-26.8110626,-65.3030386,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x942242c8aaf7a97b:0xdc74dfbcd5797c30!2m2!1d-65.2975741!2d-26.7999732">Campus Colegio Santa Rosa</a></li>
@@ -26,7 +26,7 @@ const Home = () => {
                 <div className="col-md-7 col-lg-10 align-self-start">
                     <div className="m-3">
                         <h4 className="text-end"><span className="span-2">Información del Pago</span></h4>
-                        <p><b>No queremos que lo económico no sea un impedimento para participar</b>. Para resolver esto, les vamos a ofrecer rifas cuando se inscriban (con estas van a poder cubrir el retiro completo). Los premios son excelentes, así que ofrezcan lo más que puedan.Si quiere pagarlo en <b>efectivo</b>, por redes sociales comunicaremos los días en los que realizaremos los puntos de inscripción. En el caso de pagar por <b>transferencia</b>, cuando habilitemos los pagos por este medio estaremos compartiendo personalmente el CBU por mensaje privado.</p>
+                        <p><b>No queremos que lo económico sea un impedimento para participar</b>. Para resolver esto, les vamos a ofrecer rifas cuando se inscriban (con estas van a poder cubrir el retiro completo). Los premios son excelentes, así que ofrezcan lo más que puedan. Si quieren pagarlo en <b>efectivo</b>, por redes sociales comunicaremos los días en los que se realizaran las inscripciones. En el caso de pagar por <b>transferencia</b>, cuando habilitemos los pagos por este medio estaremos compartiendo personalmente el CBU por mensaje privado.</p>
                     </div>
                 </div>
                 <div className="col-md-5 col-lg-2">
@@ -44,7 +44,7 @@ const Home = () => {
                             <li>Estar en 5to o 6to año del secundario (16-18 años).</li>
                             <li>Completar el formulario de inscripción: <Link className="text-light" target={"_blank"} to={"./inscribirme"}>Inscribirme</Link>.</li>
                             <li>Presentar la siguiente autorización completada y firmada: <a className="text-light" target={"_blank"} href="https://drive.google.com/file/d/1OcJB4TjlOIwRdIzrX7zdtQhN3DzrdSrE/view">Autorización</a>.</li>
-                            <li>Completar el pago del retiro. Si pago por transferencia deberá entregarnos el comprobante de la misma.</li>
+                            <li>Completar el pago del retiro. Si pago por transferencia deberán entregarnos el comprobante de la misma.</li>
                         </ul>
                     </div>
                 </div>
