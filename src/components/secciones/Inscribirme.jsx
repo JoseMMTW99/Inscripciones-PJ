@@ -37,17 +37,19 @@ const Inscribirme = () => {
 
     const [orderId, setOrderId] = useState("");
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Aquí puedes agregar lógica para validar y enviar el formulario
+    }
+
     const validarInputs = () =>{
         if (nombre_pasc !== "" && apellido_pasc !== "" && documento_pasc !== "" && nac_pasc !== "" && obrasocial_pasc !== "" && afiliado_pasc !== "" && email_pasc !== "" && sexo_pasc !== "" && colegio_pasc !== "" && colegio_otro_pasc !== "" && parrmov_pasc !== "" && parrmov_otro_pasc !== "" && enfermedad_pasc !== "" && medicamentos_pasc !== "" && alimentos_pasc !== "" && sangre_pasc !== "" && tel_pasc !== "" && pj_pasc !== "" && nombre_tutor1 !== "" && apellido_tutor1 !== "" && email_tutor1 !== "" && tel_tutor1 !== "" && nombre_tutor2 !== "" && apellido_tutor2 !== "" && email_tutor2 !== "" && tel_tutor2 !== "") {
+            console.log("Inputs Completos")
             enviarDatos;
         }
         else {
             console.log("Inputs Incompletos");
         }
-    }
-
-    const validarInputs2 = () =>{
-        {(nombre_pasc !== "" && apellido_pasc !== "" && documento_pasc !== "" && nac_pasc !== "" && obrasocial_pasc !== "" && afiliado_pasc !== "" && email_pasc !== "" && sexo_pasc !== "" && colegio_pasc !== "" && colegio_otro_pasc !== "" && parrmov_pasc !== "" && parrmov_otro_pasc !== "" && enfermedad_pasc !== "" && medicamentos_pasc !== "" && alimentos_pasc !== "" && sangre_pasc !== "" && tel_pasc !== "" && pj_pasc !== "" && nombre_tutor1 !== "" && apellido_tutor1 !== "" && email_tutor1 !== "" && tel_tutor1 !== "" && nombre_tutor2 !== "" && apellido_tutor2 !== "" && email_tutor2 !== "" && tel_tutor2 !== "") ? new Promise(()=>{setTimeout(()=>{enviarDatos},2000)})   : console.log("Inputs Incompletos")}
     }
     
     // Enviar Datos
@@ -107,7 +109,7 @@ const Inscribirme = () => {
     return (
         <div className="animate__animated animate__zoomIn animate__delay-1s">
             <h1 className="container pt-5 d-flex align-items-center justify-content-center">Datos Personales</h1>
-            <form className="container pt-2">
+            <form className="container pt-2" onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col md-6 pt-3">
                         <label htmlFor="inputState">Nombre</label>
@@ -339,7 +341,7 @@ const Inscribirme = () => {
                 <div className="container">
                     {orderId ?"" : 
                         <div className="pt-5 d-grid justify-content-center">
-                            <button className="btn btn-light" type="submit" onClick={enviarDatos}>Enviar</button>
+                            <button className="btn btn-light" type="submit" onClick={validarInputs}>Enviar</button>
                         </div>}
                 </div>
             </form >
