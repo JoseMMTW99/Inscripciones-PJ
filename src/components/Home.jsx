@@ -42,7 +42,7 @@ const Home = () => {
                         <h4 className="text-start">Requisitos de inscripción</h4>
                         <ul>
                             <li>Estar en 5to o 6to año del secundario (16-18 años).</li>
-                            <li>Completar el formulario de inscripción: <Link className="text-light" target={"_blank"} to={"./inscribirme"}>Inscribirme</Link>.</li>
+                            <li>Completar el formulario de inscripción.</li>
                             <li>Presentar la siguiente autorización completada y firmada: <a className="text-light" target={"_blank"} href="https://drive.google.com/file/d/1OcJB4TjlOIwRdIzrX7zdtQhN3DzrdSrE/view">Autorización</a>.</li>
                             <li>Completar el pago del retiro. Si pago por transferencia deberán entregarnos el comprobante de la misma.</li>
                         </ul>
