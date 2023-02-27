@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const Inscribirme = () => {
@@ -37,24 +37,73 @@ const Inscribirme = () => {
 
     const [orderId, setOrderId] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Aquí puedes agregar lógica para validar y enviar el formulario
+    function handleSubmit(e) {
+        e.preventDefault(); // cancela el evento submit
+        // manejar la lógica del envío del formulario aquí
     }
 
-    const validarInputs = () =>{
+    const validarInputs = () => {
         if (nombre_pasc !== "" && apellido_pasc !== "" && documento_pasc !== "" && nac_pasc !== "" && obrasocial_pasc !== "" && afiliado_pasc !== "" && email_pasc !== "" && sexo_pasc !== "" && colegio_pasc !== "" && colegio_otro_pasc !== "" && parrmov_pasc !== "" && parrmov_otro_pasc !== "" && enfermedad_pasc !== "" && medicamentos_pasc !== "" && alimentos_pasc !== "" && sangre_pasc !== "" && tel_pasc !== "" && pj_pasc !== "" && nombre_tutor1 !== "" && apellido_tutor1 !== "" && email_tutor1 !== "" && tel_tutor1 !== "" && nombre_tutor2 !== "" && apellido_tutor2 !== "" && email_tutor2 !== "" && tel_tutor2 !== "") {
-            console.log("Inputs Completos")
-            enviarDatos;
+            console.log("Completo");
+            const pascuante = {
+
+                //Filtro para Firebase
+                filtrar: {
+                    nom: nombre_pasc,
+                    ap: apellido_pasc
+                },
+                // Datos Pascuante
+                datos_pascuante: {
+                    nombre_pasc: nombre_pasc,
+                    apellido_pasc: apellido_pasc,
+                    documento_pasc: documento_pasc,
+                    nac_pasc: nac_pasc,
+                    obrasocial_pasc: obrasocial_pasc,
+                    afiliado_pasc: afiliado_pasc,
+                    email_pasc: email_pasc,
+                    sexo_pasc: sexo_pasc,
+                    colegio_pasc: colegio_pasc,
+                    colegio_otro_pasc: colegio_otro_pasc,
+                    parrmov_pasc: parrmov_pasc,
+                    parrmov_otro_pasc: parrmov_otro_pasc,
+                    enfermedad_pasc: enfermedad_pasc,
+                    medicamentos_pasc: medicamentos_pasc,
+                    alimentos_pasc: alimentos_pasc,
+                    sangre_pasc: sangre_pasc,
+                    tel_pasc: tel_pasc,
+                    pj_pasc: pj_pasc,
+                },
+                // Datos Tutor 1
+                tutor1: {
+                    nombre_tutor1: nombre_tutor1,
+                    apellido_tutor1: apellido_tutor1,
+                    email_tutor1: email_tutor1,
+                    tel_tutor1: tel_tutor1,
+                },
+                // Datos Tutor 2
+                tutor2: {
+                    nombre_tutor2: nombre_tutor2,
+                    apellido_tutor2: apellido_tutor2,
+                    email_tutor2: email_tutor2,
+                    tel_tutor2: tel_tutor2
+                }
+            };
+    
+            const db = getFirestore();
+            const pascuanteCollection = collection(db, "pascuante");
+            addDoc(pascuanteCollection, pascuante).then((snapShot) => {
+                setOrderId(snapShot.id);
+            })
+            
         }
         else {
             console.log("Inputs Incompletos");
         }
     }
-    
+
     // Enviar Datos
     const enviarDatos = () => {
-        const pascuantes =  {
+        const pascuante = {
 
             //Filtro para Firebase
             filtrar: {
@@ -99,12 +148,12 @@ const Inscribirme = () => {
         };
 
         const db = getFirestore();
-        const pascuantesCollection = collection(db, "pascuantes");
-        addDoc(pascuantesCollection, pascuantes).then((snapShot) => {
+        const pascuanteCollection = collection(db, "pascuante");
+        addDoc(pascuanteCollection, pascuante).then((snapShot) => {
             setOrderId(snapShot.id);
         })
     }
-    
+
 
     return (
         <div className="animate__animated animate__zoomIn animate__delay-1s">
@@ -143,7 +192,7 @@ const Inscribirme = () => {
                 <div className="row">
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Email</label>
-                        <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_pasc(e.target.value) }} required />
+                        <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_pasc(e.target.value) }} required />
                     </div>
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Sexo</label>
@@ -311,7 +360,7 @@ const Inscribirme = () => {
                         </div>
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Email</label>
-                            <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor1(e.target.value) }} required />
+                            <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor1(e.target.value) }} required />
                         </div>
                     </div>
                 </div >
@@ -334,12 +383,12 @@ const Inscribirme = () => {
                         </div>
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Email</label>
-                            <input type="text" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor2(e.target.value) }} required />
+                            <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor2(e.target.value) }} required />
                         </div>
                     </div>
                 </div >
                 <div className="container">
-                    {orderId ?"" : 
+                    {orderId ? "" :
                         <div className="pt-5 d-grid justify-content-center">
                             <button className="btn btn-light" type="submit" onClick={validarInputs}>Enviar</button>
                         </div>}
