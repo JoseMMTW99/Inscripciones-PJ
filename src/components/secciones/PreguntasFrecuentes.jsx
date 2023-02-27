@@ -39,7 +39,7 @@ const PreguntasFrecuentes = () => {
                     <div className="col-md-5 col-lg-7 align-self-start">
                         <div className="m-3">
                             <h4 className="text-start">Plazo de Entrega</h4>
-                            <p>Se recibirán los papeles y el dinero los días de inscripción. Por lo tanto, el plazo es hasta el último día de inscripción (les iremos avisando, pero no se dejen estar. Podemos decidir de repente que se cierran las inscripciones). Quien no complete dinero y requisitos, no podrá participar del retiro.
+                            <p>Se recibirán los papeles y el dinero los días de inscripción. Por lo tanto, el plazo es hasta el último día de inscripción (les iremos avisando, pero no se dejen estar. Se puede completar el cupo y cerrase las inscripciones). Quien no complete dinero y requisitos, no podrá participar del retiro.
                             </p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ const PreguntasFrecuentes = () => {
                         </div>
                     </div>
                     <div className="col-md-7 col-lg-5">
-                        <img className="img-fluid animate__animated animate__bounceIn animate__delay-2s" src="../images/otros/remedios.jpg" alt="" />
+                        <img className="img-fluid animate__animated animate__bounceIn animate__delay-2s" src="../images/otros/comidas.jpg" alt="" />
                     </div>
                 </section>
                 <section className="row col-xl-6 gx-0 align-items-center border p-2 animate__animated animate__fadeInRight">
@@ -97,7 +97,7 @@ const PreguntasFrecuentes = () => {
                     </div>
                     <div className="col-md-5 col-lg-7 align-self-start">
                         <div className="m-3">
-                            <h4 className="text-end">Si estan fuera de la ciudad podrán ir en otra fecha</h4>
+                            <h4 className="text-end">¿Que pasa si estoy fuera de la ciudad?, podrán ir en otra fecha</h4>
                             <p>Pero por favor, estas aclaraciones son para quienes no puedan ir realmente. No queremos ser insistentes pero si no se inscriben ahora:</p>
                             <ul>
                                     <li>No se aseguran el lugar.</li>

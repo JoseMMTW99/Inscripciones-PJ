@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="col-md-7 col-lg-10 align-self-start">
                     <div className="m-3">
                         <h4 className="text-start">¿Qué es Pascua Joven?</h4>
-                        <p className="text-start">Pascua Joven es un <b>RETIRO</b> de <b>ALTO IMPACTO</b> organizado por la pastoral de la juventud, dirigido a los jovenes adolescentes. Se realiza de miércoles santo a domingo de pascua de manera presencial.</p>
+                        <p className="text-start">Pascua Joven es un <b>RETIRO</b> de <b>ALTO IMPACTO</b> organizado por la pastoral de la juventud, dirigido a los jovenes adolescentes de 5to, 6to y 7mo año del secundario (16-18 años). Se realiza de miércoles santo a domingo de pascua de manera presencial.</p>
                         <p className="text-start"></p>
                         <ul>
                             <li>Ubicación: <a className="text-light" target={"_blank"} href="https://www.google.com/maps/dir//campus+santa+rosa/@-26.8110626,-65.3030386,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x942242c8aaf7a97b:0xdc74dfbcd5797c30!2m2!1d-65.2975741!2d-26.7999732">Campus Colegio Santa Rosa</a></li>
@@ -41,7 +41,8 @@ const Home = () => {
                     <div className="m-3">
                         <h4 className="text-start">Requisitos de inscripción</h4>
                         <ul>
-                            <li>Estar en 5to o 6to año del secundario (16-18 años).</li>
+                            <li>Estar en 5to, 6to o 7mo año del secundario (16-18 años).</li>
+                            <li>Presentar fotocopia del DNI.</li>
                             <li>Completar el formulario de inscripción.</li>
                             <li>Presentar la siguiente autorización completada y firmada: <a className="text-light" target={"_blank"} href="https://drive.google.com/file/d/1OcJB4TjlOIwRdIzrX7zdtQhN3DzrdSrE/view">Autorización</a>.</li>
                             <li>Completar el pago del retiro. Si pago por transferencia deberán entregarnos el comprobante de la misma.</li>
