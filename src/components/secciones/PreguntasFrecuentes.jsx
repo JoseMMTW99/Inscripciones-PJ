@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const PreguntasFrecuentes = () => {
     return (
-        <div className="container d-flex align-items-center justify-content-center">
+        <div className="container">
             <div className="row pt-5">
                 <section className="row col-xl-6 gx-0 align-items-center border p-2 animate__animated animate__fadeInLeft">
                     <div className=" col-md-5 col-lg-7 align-self-start">

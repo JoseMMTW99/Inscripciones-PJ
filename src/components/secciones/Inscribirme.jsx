@@ -161,13 +161,13 @@ const Inscribirme = () => {
                     </div>
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Email</label>
-                        <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_pasc(e.target.value) }} required />
+                        <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Email" onInput={(e) => { setEmail_pasc(e.target.value) }} required />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Número de teléfono (Completo) 54381*******</label>
-                        <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de teléfono" aria-label="Documento" onInput={(e) => { setTel_pasc(e.target.value) }} required />
+                        <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de teléfono" aria-label="Número de teléfono (Completo) 54381*******" onInput={(e) => { setTel_pasc(e.target.value) }} required />
                     </div>
                     <div className="col-md-6 pt-3">
 
@@ -232,7 +232,7 @@ const Inscribirme = () => {
                     </div>
                     <div className="col-md-4 pt-3">
                         <label className="" htmlFor="inputState">Otro colegio</label>
-                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Colegio" onInput={(e) => { setColegio_otro_pasc(e.target.value) }} required />
+                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Otro Colegio" onInput={(e) => { setColegio_otro_pasc(e.target.value) }} required />
                     </div>
                     <div className="col-md-2 pt-3">
                         <label htmlFor="inputState">Año</label>
@@ -276,7 +276,7 @@ const Inscribirme = () => {
                     </div>
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Otra Parroquia/Movimiento</label>
-                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Parroquia/Movimiento" onInput={(e) => { setParroqmov_otro_pasc(e.target.value) }} required />
+                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Otra Parroquia/Movimiento" onInput={(e) => { setParroqmov_otro_pasc(e.target.value) }} required />
                     </div>
                 </div>
                 <div className="row">
@@ -362,21 +362,21 @@ const Inscribirme = () => {
                 <div className="row">
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Alergias a medicamentos, comidas, otros. ¿Cuáles?</label>
-                        <input type="text" className="form-control" placeholder="Especificar Alergias/No" aria-label="Alergias" onInput={(e) => { setAlergias_pasc(e.target.value) }} required />
+                        <input type="text" className="form-control" placeholder="Especificar Alergias/No" aria-label="Alergias a medicamentos, comidas, otros. ¿Cuáles?" onInput={(e) => { setAlergias_pasc(e.target.value) }} required />
                     </div>
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Medicamentos que recibe habitualmente</label>
-                        <input type="text" className="form-control" placeholder="Especificar Medicamentos/No" aria-label="Especificaciones Alimentarias" onInput={(e) => { setMedicamentos_pasc(e.target.value) }} required />
+                        <input type="text" className="form-control" placeholder="Especificar Medicamentos/No" aria-label="Medicamentos que recibe habitualmente" onInput={(e) => { setMedicamentos_pasc(e.target.value) }} required />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Menú especial</label>
-                        <input type="text" className="form-control" placeholder="Especificar Menú/No" aria-label="Especificaciones Alimentarias" onInput={(e) => { setMenu_pasc(e.target.value) }} required />
+                        <input type="text" className="form-control" placeholder="Especificar Menú/No" aria-label="Menú especial" onInput={(e) => { setMenu_pasc(e.target.value) }} required />
                     </div>
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Otra/s Enfermedad/es</label>
-                        <input type="text" className="form-control" placeholder="Nombre/Listo" aria-label="Otra/s Enfermedad/es" onInput={(e) => { setEnfermedad_otro_pasc(e.target.value) }} required />
+                        <input type="text" className="form-control" placeholder="Especificar enfermedad/No" aria-label="Otra/s Enfermedad/es" onInput={(e) => { setEnfermedad_otro_pasc(e.target.value) }} required />
                     </div>
                 </div>
                 <h2 className="container pt-5 d-flex align-items-center justify-content-center">Datos Tutor 1</h2>
@@ -384,21 +384,21 @@ const Inscribirme = () => {
                     <div className="row">
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Nombres</label>
-                            <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_tutor1(e.target.value) }} required />
+                            <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre Tutor 1" onInput={(e) => { setNombre_tutor1(e.target.value) }} required />
                         </div>
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Apellido</label>
-                            <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_tutor1(e.target.value) }} required />
+                            <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido Tutor 1" onInput={(e) => { setApellido_tutor1(e.target.value) }} required />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Email</label>
-                            <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor1(e.target.value) }} required />
+                            <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Email Tutor 1" onInput={(e) => { setEmail_tutor1(e.target.value) }} required />
                         </div>
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Número de teléfono (Completo) 54381*******</label>
-                            <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de Teléfono" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor1(e.target.value) }} required />
+                            <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de teléfono (Completo) 54381******* Tutor 1" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor1(e.target.value) }} required />
                         </div>
                     </div>
                 </div >
@@ -407,21 +407,21 @@ const Inscribirme = () => {
                     <div className="row">
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Nombre</label>
-                            <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre" onInput={(e) => { setNombre_tutor2(e.target.value) }} required />
+                            <input type="text" className="form-control" placeholder="Ingrese sus Nombres" aria-label="Nombre Tutor 2" onInput={(e) => { setNombre_tutor2(e.target.value) }} required />
                         </div>
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Apellido</label>
-                            <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido" onInput={(e) => { setApellido_tutor2(e.target.value) }} required />
+                            <input type="text" className="form-control" placeholder="Ingrese sus Apellidos" aria-label="Apellido Tutor 2" onInput={(e) => { setApellido_tutor2(e.target.value) }} required />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Email</label>
-                            <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Obra Social" onInput={(e) => { setEmail_tutor2(e.target.value) }} required />
+                            <input type="email" className="form-control" placeholder="Ingrese su Email" aria-label="Email Tutor 2" onInput={(e) => { setEmail_tutor2(e.target.value) }} required />
                         </div>
                         <div className="col-md-6 pt-3">
                             <label htmlFor="inputState">Número de teléfono (Completo) 54381*******</label>
-                            <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de Teléfono" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor2(e.target.value) }} required />
+                            <input type="" pattern="[0-9]+" className="form-control" placeholder="Ingrese su Número de teléfono (Completo) 54381******* Tutor 2" aria-label="Número de Teléfono" onInput={(e) => { setTel_tutor2(e.target.value) }} required />
                         </div>
                     </div>
                 </div >
