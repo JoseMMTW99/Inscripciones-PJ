@@ -433,7 +433,7 @@ const Inscribirme = () => {
                 </div>
             </form >
             <div className="container">
-                {orderId ? <div><h2 className="pt-5 text-center">Felicidades {nombre_insc} tus datos fueron enviados! Gracias por pre-inscribirte a Pascua Joven!</h2><p className="text-center">Recuerda presentar los datos solicitados especificados de los Requisitos de Inscripción en la sección principal. En nuestras redes sociales vamos a estar manteniendote al día con el retiro. La preinscripción no asegura tu lugar en el retiro, solo lo reserva.</p></div> : ""}
+                {orderId ? <div><h2 className="pt-5 text-center">Felicidades {nombre_insc} tus datos fueron enviados! Gracias por pre-inscribirte a Pascua Joven!</h2><p className="text-center">Recuerda presentar los datos solicitados especificados de los Requisitos de Inscripción en la sección principal. En nuestras redes sociales vamos a estar manteniendote al día con el retiro. La preinscripción no asegura tu lugar en el retiro, solo lo reserva. Te vamos a contactar por email. Ante cualquier consulta podes comunicarte con nosotros mediante el correo pascuajoventucuman@gmail.com</p></div> : ""}
             </div>
         </div>
     )
