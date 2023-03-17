@@ -42,6 +42,7 @@ const Inscribirme = () => {
     const [medicamentos_insc, setMedicamentos_insc] = useState("");
     const [menu_insc, setMenu_insc] = useState("");
     const [enfermedad_otro_insc, setEnfermedad_otro_insc] = useState("");
+    const fecha = new Date();
 
     // Datos Tutor 1
     const [nombre_tutor1, setNombre_tutor1] = useState("");
@@ -97,6 +98,7 @@ const Inscribirme = () => {
                     sangre_insc: sangre_insc,
                     tel_insc: tel_insc,
                     pj_insc: pj_insc,
+                    fecha_pre_insc: `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}   ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`
                 },
                 // Datos Tutor 1
                 tutor1: {
