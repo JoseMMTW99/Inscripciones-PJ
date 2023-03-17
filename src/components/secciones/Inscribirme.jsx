@@ -98,7 +98,8 @@ const Inscribirme = () => {
                     sangre_insc: sangre_insc,
                     tel_insc: tel_insc,
                     pj_insc: pj_insc,
-                    fecha_pre_insc: `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}   ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`
+                    dia_pre_insc: `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}`,
+                    hora_pre_insc: `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`
                 },
                 // Datos Tutor 1
                 tutor1: {
