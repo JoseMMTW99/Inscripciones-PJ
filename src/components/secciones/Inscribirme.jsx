@@ -126,6 +126,7 @@ const Inscribirme = () => {
         }
         else {
             console.log("Inputs Incompletos");
+            alert("Formulario Incompleto, por favor revisa que todas las casillas esten completadas.");
         }
     }
 
@@ -180,7 +181,7 @@ const Inscribirme = () => {
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Colegio</label>
                         <select id="inputState" className="form-select" onInput={(e) => { setColegio_insc(e.target.value) }}>
-                            <option defaultValue>Ingrese su Colegio</option>
+                            <option defaultValue>Ingrese su Colegio/Otro</option>
                             <option>20 de Julio</option>
                             <option>Alfonsina Storni</option>
                             <option>Ballesteros</option>
@@ -251,7 +252,7 @@ const Inscribirme = () => {
                     <div className="col-md-6 pt-3">
                         <label htmlFor="inputState">Parroquia/Movimiento</label>
                         <select id="inputState" className="form-select" onInput={(e) => { setParroqmov_insc(e.target.value) }}>
-                            <option defaultValue>Ingrese su Parroquia/Movimiento</option>
+                            <option defaultValue>Ingrese su Parroquia/Movimiento o la opción "No Participo"</option>
                             <option>No Participo</option>
                             <option>Carmelo Joven</option>
                             <option>Hnas. Dominicas </option>
@@ -436,7 +437,7 @@ const Inscribirme = () => {
                 </div>
             </form >
             <div className="container">
-                {orderId ? <div><h2 className="pt-5 text-center">Felicidades {nombre_insc} tus datos fueron enviados! Gracias por pre-inscribirte a Pascua Joven!</h2><p className="text-center">Recuerda presentar los datos solicitados especificados de los Requisitos de Inscripción en la sección principal. En nuestras redes sociales vamos a estar manteniendote al día con el retiro. La preinscripción no asegura tu lugar en el retiro, solo lo reserva. Te vamos a contactar por email. Ante cualquier consulta podes comunicarte con nosotros mediante el correo pascuajoventucuman@gmail.com</p></div> : ""}
+                {orderId ? <div><h2 className="pt-5 text-center">Felicidades {nombre_insc} tus datos fueron enviados! Gracias por pre-inscribirte a Pascua Joven!</h2><p className="text-center">Recuerda presentar los datos solicitados especificados de los Requisitos de Inscripción en la sección principal. En nuestras redes sociales vamos a estar manteniendote al día con el retiro. La preinscripción no asegura tu lugar en el retiro, solo lo reserva.</p></div> : ""}
             </div>
         </div>
     )
